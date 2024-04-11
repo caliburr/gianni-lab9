@@ -3,8 +3,15 @@ Gianni Garcia
 """
 
 
+def convert(char) -> str:
+    char = int(char) + 3
+    if char >= 10:
+        char -= 10
+    return str(char)
+
+
 def encode(password: str) -> str:
-    return ''.join(map(lambda char: str(int(char) + 3),  password))
+    return ''.join(map(convert,  password))
 
 
 def decode(password: str) -> str:
@@ -31,6 +38,7 @@ def main() -> None:
                 on = False
             case _:
                 raise ValueError("womp womp weoweoweowoew")
+
 
 if __name__ == "__main__":
     main()
