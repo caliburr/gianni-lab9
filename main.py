@@ -14,8 +14,17 @@ def encode(password: str) -> str:
     return ''.join(map(convert,  password))
 
 
+#Yasser
 def decode(password: str) -> str:
-    pass
+   decode = []
+   for i in password:
+       number = int(i)
+       number -= 3
+       if number < 0:
+            number += 10
+       decode.append(number)
+   return''.join(str(i) for i in decode)
+
 
 
 def main() -> None:
